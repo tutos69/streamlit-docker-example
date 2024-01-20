@@ -12,6 +12,7 @@ COPY ./requirements.txt /usr/src/app/requirements.txt
 # dependencies
 RUN pip install --upgrade pip setuptools wheel \
     && pip install -r requirements.txt \
+    && pip install --upgrade bitsandbytes \
     && rm -rf /root/.cache/pip
 
 COPY ./ /usr/src/app
