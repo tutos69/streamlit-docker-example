@@ -5,7 +5,7 @@ import torch
 # Carga del modelo y el tokenizador
 model_id = "tutos69/LLM2QR1"
 tokenizer = AutoTokenizer.from_pretrained(model_id)
-model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float16, device_map="auto")
+model = AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.float16).to("cuda:0")
 
 # Función principal de la aplicación Streamlit
 def main():
